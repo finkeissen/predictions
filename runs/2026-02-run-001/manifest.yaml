@@ -1,0 +1,27 @@
+run_id: RUN-2026-02-001
+date: 2026-02-15
+status: draft  # draft | executed | evaluated | archived
+
+hypotheses:
+  - H001
+
+matrix:
+  version: MX-000
+mms:
+  version: MMS-000
+research_program:
+  anchor: RP-000
+
+inputs:
+  - ref: inputs/.gitkeep
+outputs:
+  - ref: outputs/.gitkeep
+
+tooling:
+  script_sha: null
+  environment: null
+
+evaluation:
+  method: null
+  result: null
+  notes: null

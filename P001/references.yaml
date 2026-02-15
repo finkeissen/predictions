@@ -1,0 +1,8 @@
+hypotheses:
+  - H001
+matrix:
+  - id: MX-000
+runs:
+  - RUN-2026-02-001
+status: draft
+tags: [template, example]
