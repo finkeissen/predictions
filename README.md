@@ -1,61 +1,109 @@
 # predictions
 
-Versionierte, referenzierbare, **operativ überprüfbare** Projektionen  
-als operative Schicht aus `hypotheses` + `matrix` unter MMS-Governance.
+Versioned, referenceable, **operationally verifiable** projections  
+as the operational layer derived from `hypotheses` + `matrix` under MMS governance.
 
-## Zweck dieses Repositories
+## Purpose of this repository
 
-Dieses Repository enthält **ausschließlich**:
+This repository contains **exclusively**:
 
-- Projektionen / Konsequenz-Ableitungen („predictions“) aus expliziten Hypothesen (`H###`)  
-- Run-Artefakte mit **Manifestpflicht** (Inputs/Outputs/Validierung)  
-- Evaluationen inkl. dokumentierter Fehlschläge (Spiralmodell)
+- projections / consequence derivations (“predictions”) from explicit hypotheses (`H###`)  
+- run artifacts with **manifest obligation** (inputs/outputs/validation)  
+- evaluations including documented failures (spiral model)
 
-**Wichtig:**  
-Hier gibt es **keine** neuen Hypothesen (die gehören nach `hypotheses`) und keine Black-Box-Optimierung / kein „Fitting“.  
-Zulässig sind constraint-based Ableitungen, consequence maps, scenario trees und nachvollziehbare Übergänge.
+**Important:**  
+There are **no** new hypotheses here (those belong in `hypotheses`) and no black-box optimization / no “fitting”.  
+Permitted are constraint-based derivations, consequence maps, scenario trees, and traceable transitions.
 
-## Architektur-Einbettung (Stand Februar 2026)
+## Architectural embedding (as of February 2026)
 
-Layer-Reihenfolge (kanonisch):
+Layer ordering (canonical):
 
 0. legacy (inadmissibility)  
 1. research-program (analytics)  
 2. mms (dbms)  
 3. matrix (artifacts)  
 4. hypotheses (falsifiable)  
-5. **predictions (verifiable)**  ← dieses Repo
+5. **predictions (verifiable)**  ← this repository
 
-Fluss: Kernel → Hypothesen → Matrix → Predictions  
-Rückkopplung: Evaluation → (Instanziierungs-Korrektur | Hypothesen-Statuswechsel) → neuer Run
+Flow: Kernel → Hypotheses → Matrix → Predictions  
+Feedback: evaluation → (instantiation correction | hypothesis status change) → new run
 
-→ Canonical governance: siehe `docs/README.md` (Quelle: `research-program`)
+→ Canonical governance: see `docs/README.md` (source: `research-program`)
 
 ## Core Rules
 
-- Jede Prediction **muss** auf mindestens eine Hypothese `H###` zurückführbar sein.
-- Jede Prediction **muss** einen oder mehrere Runs referenzieren: `RUN-YYYY-MM-###`.
-- **Manifestpflicht** pro Run: Versionen, Inputs, Outputs, Prüfstatus.
-- Empirisches Scheitern wird dokumentiert, nicht versteckt (Evaluations sind Artefakte).
-- „Verifiable“ bedeutet: **operativ prüfbar** – nicht „bewiesen wahr“.
+- Each prediction **must** be traceable to at least one hypothesis `H###`.  
+- Each prediction **must** reference one or more runs: `RUN-YYYY-MM-###`.  
+- **Manifest obligation** per run: versions, inputs, outputs, validation status.  
+- Empirical failure is documented, not hidden (evaluations are artifacts).  
+- “Verifiable” means: **operationally testable** – not “proven true”.
 
-## Ordnerstruktur (aktuell)
+## Folder structure (current)
 
 predictions/
-├── README.md
-├── index.md
-├── runs/
-│   └── 2026-02-run-001/
-│       ├── manifest.yaml
-│       ├── inputs/
-│       ├── outputs/
-│       └── validation-report.md
-├── projections/
-├── evaluations/
-├── tools/               ← optional, strikt von Artefakten getrennt
+├── README.md  
+├── index.md  
+├── runs/  
+│   └── 2026-02-run-001/  
+│       ├── manifest.yaml  
+│       ├── inputs/  
+│       ├── outputs/  
+│       └── validation-report.md  
+├── projections/  
+├── evaluations/  
+├── tools/               ← optional, strictly separated from artifacts  
 └── schema/
 
-## Lizenz
+## License
 
 CC BY-NC 4.0
+
+## Role in the epistemic flow
+
+Predictions operationalize hypotheses within admissible structure.
+
+They do not generate claims.
+They expose consequences.
+
+Outcomes may include:
+- empirical support,
+- empirical failure,
+- instantiation refinement,
+- STOP when evaluation cannot be meaningfully performed.
+
+## Prediction lifecycle across layers
+
+A prediction may:
+- instantiate one or more hypotheses,
+- generate runs and evaluations,
+- trigger hypothesis revision,
+- refine Matrix structure,
+- or result in STOP when operational conditions collapse.
+
+## Interfaces
+
+- Hypotheses → define claims being operationalized
+- Matrix → provides admissible structural context
+- MMS → governs admissible transitions and evaluation constraints
+- Predictions → expose consequences and empirical interaction
+- Legacy → preserves runs that cannot be interpreted
+
+## STOP vs empirical failure
+
+Empirical failure concerns outcome mismatch.
+
+STOP concerns evaluation inadmissibility:
+the prediction cannot be meaningfully executed or interpreted under current constraints.
+
+Both are recorded.
+
+## External orientation
+
+This repository is where the architecture encounters reality:
+runs,
+evaluations,
+failure,
+and operational limits.
+
 
