@@ -1,4 +1,4 @@
-# predictions
+# PREDICTIONS Repository
 
 Versioned, referenceable, **operationally verifiable** projections  
 as the operational layer derived from `hypotheses` + `matrix` under MMS governance.
