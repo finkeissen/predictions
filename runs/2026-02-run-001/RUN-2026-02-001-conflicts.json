@@ -1,0 +1,47 @@
+predictions/runs/RUN-2026-02-001-conflicts.json
+{
+  "run_id": "RUN-2026-02-001",
+  "created_at": "2026-02-16T10:00:00Z",
+  "purpose": "Artificial conflict injection for structural stress testing under P001",
+  "authority_boundary": "Layers 0–5 only. No authority generated.",
+  "conflict_density_target": 5,
+  "conflicts_recorded": [
+    {
+      "conflict_id": "C-001",
+      "type": "logical_contradiction",
+      "description": "H002 asserts structural stability requires prioritization; H003 asserts prioritization introduces authority.",
+      "artifacts": ["H002", "H003"],
+      "resolution": "represented_only"
+    },
+    {
+      "conflict_id": "C-002",
+      "type": "trace_break_attempt",
+      "description": "Simulated missing reference from P004 to its hypothesis.",
+      "artifacts": ["P004"],
+      "resolution": "blocked_by_gateway"
+    },
+    {
+      "conflict_id": "C-003",
+      "type": "identifier_collision_attempt",
+      "description": "Attempt to register duplicate identifier H001.",
+      "artifacts": ["H001-duplicate"],
+      "resolution": "rejected"
+    },
+    {
+      "conflict_id": "C-004",
+      "type": "read_only_violation_attempt",
+      "description": "Simulated mutation of H005 during concurrent run.",
+      "artifacts": ["H005"],
+      "resolution": "stopped_execution"
+    },
+    {
+      "conflict_id": "C-005",
+      "type": "undeclared_output_attempt",
+      "description": "Run attempted to write artifact not listed in manifest outputs.",
+      "artifacts": ["temp_output.log"],
+      "resolution": "blocked"
+    }
+  ],
+  "notes": "Conflicts are intentionally injected. They test structural containment, not domain validity."
+}
+

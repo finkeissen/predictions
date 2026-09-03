@@ -1,0 +1,78 @@
+predictions/runs/RUN-2026-02-001.yaml
+run_id: RUN-2026-02-001
+created_at: 2026-02-16T10:00:00Z
+
+actor:
+  role: gateway
+  name: mms-gateway
+
+purpose: >
+  First controlled scaling stress test of structural invariance
+  under bounded hypothesis and prediction multiplication.
+
+problem_binding:
+  statement: >
+    Test whether scaling to >10 hypotheses, >10 predictions,
+    and >=3 concurrent runs introduces structural mutation
+    or implicit authority transfer.
+  authority_boundary: >
+    All epistemic processing confined to Layers 0–5.
+    Authority remains exclusively in Layer 6.
+  non_transfer_note: >
+    No representational artifact may acquire authority.
+
+scope:
+  included:
+    - hypotheses scaling to 10+
+    - predictions scaling to 10+
+    - concurrent execution of 3 runs
+    - artificial conflict injection (>=5 contradictions)
+    - identifier stress test
+    - traceability verification
+  excluded:
+    - domain truth evaluation
+    - external decision-making
+    - policy recommendation
+    - optimization heuristics
+
+termination:
+  stop_conditions:
+    - identifier collision detected
+    - traceability chain broken
+    - unauthorized file mutation detected
+    - undeclared output detected
+    - STOP bypass attempt detected
+    - integration contract violation
+  max_runtime_seconds: 3600
+
+inputs:
+  - name: hypothesis_H001
+    ref: hypotheses@HEAD:H001.md
+  - name: prediction_P001
+    ref: predictions@HEAD:P001.md
+  - name: integration_contract
+    ref: mms@HEAD:requirements/integration/INTEGRATION_CONTRACT.md
+  - name: research_architecture
+    ref: research-program@HEAD:research-architecture.md
+
+outputs:
+  - name: scaling_audit_report
+    ref: predictions/runs/RUN-2026-02-001-report.md
+  - name: conflict_density_log
+    ref: predictions/runs/RUN-2026-02-001-conflicts.json
+
+references:
+  hypothesis_ids:
+    - H001
+  prediction_ids:
+    - P001
+  docs:
+    - research-program@HEAD:research-architecture.md
+    - mms@HEAD:requirements/integration/INTEGRATION_CONTRACT.md
+
+notes: >
+  This run intentionally injects conflict density and concurrent load.
+  Survival does not imply correctness.
+  Failure does not imply collapse.
+  It only localizes structural limits.
+
